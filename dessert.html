@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/dessert.css" />
   </head>
   <body>
+         <form id="foodForm" action="https://formspree.io/f/xgolaqjr" method="POST">
     <div id="dessertquestion">Where you want to go and eat lovvv</div>
 
     <div class="dessert-selection">
@@ -53,8 +54,21 @@
           ><input type="checkbox" name="dessert" value="randombun" /> Room food panda order </label>
       </div>
     </div>
-    <button class="button" onclick="location.href='activities.html'">
-      Continue UwU
-    </button>
+          <input type="hidden" name="_redirect" 
+  value="https://itsasjadzaheer.github.io/awwwsjad/activities.html" />
+  
+  
+  <button type="submit" class="button">
+    Continue loveee jaana...
+  </button>
+           </form>
+    <script>
+document.getElementById("foodForm").addEventListener("submit", function() {
+  setTimeout(function() {
+    window.location.href = "dessert.html";
+  }, 500);
+});
+</script>
+   
   </body>
 </html>
