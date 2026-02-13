@@ -27,10 +27,26 @@
   </button>
            </form>
     <script>
-document.getElementById("foodForm").addEventListener("submit", function() {
-  setTimeout(function() {
-    window.location.href = "food.html";
-  }, 500);
+document.getElementById("dateForm").addEventListener("submit", function(e) {
+
+  e.preventDefault(); // stop default redirect
+
+  const form = this;
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      window.location.href = "food.html";
+    } else {
+      alert("Oops! Something went wrong.");
+    }
+  });
+
 });
 </script>
   </body>
