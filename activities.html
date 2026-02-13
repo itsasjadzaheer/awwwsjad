@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/activities.css" />
   </head>
   <body>
+          <form id="foodForm" action="https://formspree.io/f/xgolaqjr" method="POST">
     <div id="activityquestion"><b>Ayesha where you always wanted to go with me love aur would love to?</b></div>
     <div class="activities-selection">
       <div class="activity-item">
@@ -108,9 +109,20 @@
           />Cuddles on bed </label
         >
       </div>
-    </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Last page ... 
-    </button>
+    </div><input type="hidden" name="_redirect" 
+  value="https://itsasjadzaheer.github.io/awwwsjad/lastpage.html" />
+  
+  
+  <button type="submit" class="button">
+    Last pageee jaana...
+  </button>
+           </form>
+    <script>
+document.getElementById("foodForm").addEventListener("submit", function() {
+  setTimeout(function() {
+    window.location.href = "lastpage.html";
+  }, 500);
+});
+</script>
   </body>
 </html>
