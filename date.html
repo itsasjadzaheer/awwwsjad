@@ -8,24 +8,21 @@
   </head>
   <body>
     <h1 title="choose a date">Are you free on ...</h1>
-    <form class="form-group" 
-      action="https://formspree.io/f/xgolaqjr" 
-      method="POST">
+   <form id="dateForm"
+      action="https://formspree.io/f/xgolaqjr"
+      method="POST"
+      class="form-group">
 
   <label>Which day: (select a date cuite.. )</label>
 
   <div>
-    <!-- Add name attribute -->
     <input type="date" name="selected_date" required />
+    <button class="button" type="submit">
+      Submit
+    </button>
+  </div>
 
-    <!-- Redirect after submission -->
-    <input type="hidden" name="_redirect"
-           value="https://itsasjadzaheer.github.io/awwwsjad/food.html" />
- </div>
-  <button type="submit" class="button">
-    submit...
-  </button>
-           </form>
+</form>
     <script>
 document.getElementById("dateForm").addEventListener("submit", function(e) {
 
