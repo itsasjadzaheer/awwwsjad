@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/food.css" />
   </head>
   <body>
-    <form action="https://formspree.io/f/xgolaqjr" method="POST">
+        <form id="foodForm" action="https://formspree.io/f/xgolaqjr" method="POST">
     <div id="foodquestion">
       <b>What food would you like to eat?</b>
     </div>
@@ -65,5 +65,12 @@
   </button>
    
     </form>
+    <script>
+document.getElementById("foodForm").addEventListener("submit", function() {
+  setTimeout(function() {
+    window.location.href = "dessert.html";
+  }, 500);
+});
+</script>
   </body>
 </html>
