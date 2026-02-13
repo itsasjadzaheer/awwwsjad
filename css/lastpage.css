@@ -9,6 +9,11 @@ body {
   font-size: 50px;
   margin-bottom: 20px;
 }
+.love-letter {
+  background-color: #fff0f5;
+  padding: 20px;
+  border-radius: 15px;
+}
 .rizz {
   margin-bottom: 10 px;
 }
