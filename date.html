@@ -8,39 +8,36 @@
   </head>
   <body>
     <h1 title="choose a date">Are you free on ...</h1>
-   <form id="dateForm"
-      action="https://formspree.io/f/xgolaqjr"
-      method="POST"
-      class="form-group">
+<form id="dateForm" class="form-group">
+<label>Which day: (select a date cuite.. )</label>
 
-  <label>Which day: (select a date cuite.. )</label>
-
-  <div>
-    <input type="date" name="selected_date" required />
-    <button class="button" type="submit">
-      Submit
-    </button>
-  </div>
+<div>
+  <input type="date" name="selected_date" required />
+  <button class="button" type="submit">
+    Submit
+  </button>
+</div>
 
 </form>
     <script>
 document.getElementById("dateForm").addEventListener("submit", function(e) {
 
-  e.preventDefault(); // stop default redirect
+  e.preventDefault(); // stop default form behavior
 
-  const form = this;
+  const formData = new FormData(this);
 
-  fetch(form.action, {
+  fetch("https://formspree.io/f/xgolaqjr", {
     method: "POST",
-    body: new FormData(form),
+    body: formData,
     headers: {
       'Accept': 'application/json'
     }
-  }).then(response => {
+  })
+  .then(response => {
     if (response.ok) {
       window.location.href = "food.html";
     } else {
-      alert("Oops! Something went wrong.");
+      alert("Something went wrong!");
     }
   });
 
