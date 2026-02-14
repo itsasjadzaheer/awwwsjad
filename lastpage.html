@@ -1,67 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/flower.css" />
-  </head>
-  <body>
-    <h1>Thank you for being my girlfriend ❤️</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f5e6d3;
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
 
-<div class="love-message">
-  (Thank you for being my girlfriend, begum, babe, cutie, jerry and the most my love❤️🌹. My love ❤️🌹, I just want to say thank you for being the most beautiful part of my life. You make my world softer, brighter, and so much happier just by being in it. 💫 You are more than enough — you are worthy, precious, and deeply loved every single day, not just today. 🥰💖 On this Valentine’s Day, I want you to remember that you are my safe place, 
-      my biggest blessing, and my favorite person in the entire universe. 🌎✨ I’m so lucky to call you mine, and I promise to always remind you how special and irreplaceable you are. 💕💍)</div>
+    /* Standard Layout flow to prevent overlap */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-    <div class="flower">
-      <div class="f-wrapper">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
-          ></div>
-        </div>
-      </div>
+    /* Message Box styling */
+    .message-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 32px;
+      padding: 40px;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      margin-bottom: 60px;
+    }
 
-      <div class="f-wrapper f-wrapper--2">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
-          ></div>
-        </div>
-      </div>
+    /* Flower Animation */
+    @keyframes sway {
+      0%, 100% { transform: translateX(-50%) rotate(-1.5deg); }
+      50% { transform: translateX(-50%) rotate(1.5deg); }
+    }
 
-      <div class="f-wrapper f-wrapper--3">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
-          ></div>
-        </div>
-      </div>
-      <div class="flower__glass"></div>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-sway {
+      animation: sway 5s ease-in-out infinite;
+    }
+
+    .animate-fade {
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    /* Flower & Vase Construction */
+    .vase-container {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .glass-vase {
+      position: relative;
+      width: 120px;
+      height: 160px;
+      background: rgba(0, 120, 130, 0.25);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 10px 10px 40px 40px;
+      z-index: 30;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .glass-vase::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 75%;
+      background: rgba(0, 162, 174, 0.1);
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform-origin: bottom center;
+    }
+
+    .flower-head {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      z-index: 10;
+    }
+
+    .petal {
+      position: absolute;
+      width: 40px;
+      height: 60px;
+      border-radius: 50%;
+      top: 0;
+      left: 20px;
+      transform-origin: bottom center;
+      opacity: 0.95;
+    }
+
+    .center-disk {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #facc15;
+      border-radius: 50%;
+      z-index: 20;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .stem {
+      width: 6px;
+      background: #1c5b4f;
+      border-radius: 10px;
+      margin-top: -5px;
+    }
+
+    /* Floating Icons */
+    .floating {
+      position: fixed;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body>
+
+  <div class="content-wrapper">
+    <!-- Title -->
+    <header class="animate-fade" style="animation-delay: 0.2s">
+      <h1 class="text-[#ff8f8f] text-4xl md:text-5xl font-bold mb-8 text-center px-4">
+        Thank you for being my girlfriend ❤️
+      </h1>
+    </header>
+
+    <!-- Message Section -->
+    <div class="message-card animate-fade" style="animation-delay: 0.4s">
+      <p class="text-[#ff8f8f] text-lg md:text-xl leading-relaxed italic font-medium">
+        "Thank you for being my girlfriend, begum, babe, cutie, jerry and my best my love ❤️. My love ❤️🌹, 
+        I just want to say thank you for being the most beautiful part of my life. You make my world softer, 
+        brighter, and so much better just by being in it. 👁️‍🗨️ You are more than enough — you are worthy, 
+        precious, and deeply loved every single day, not just today. 🥰❤️ On this Valentine's Day I want you 
+        to remember that you are my safe place, my biggest blessing, and my favorite person in the entire universe. 
+        🌍✨ I'm so lucky to call you mine, and I promise to always remind you how special and irreplaceable you are. ❤️💍"
+      </p>
     </div>
-  </body>
+
+    <!-- Flower Vase Section (Naturally pushed below text) -->
+    <div class="vase-container animate-fade" style="animation-delay: 0.6s">
+      
+      <!-- Flower 1 (Purple) -->
+      <div class="flower animate-sway" style="left: 35%; animation-delay: 0.2s;">
+        <div class="flower-head">
+          <div class="center-disk"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(0deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(45deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(90deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(135deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(180deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(225deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(270deg);"></div>
+          <div class="petal" style="background: #b266ff; transform: rotate(315deg);"></div>
+        </div>
+        <div class="stem" style="height: 200px; transform: rotate(-10deg);"></div>
+      </div>
+
+      <!-- Flower 2 (Pink) -->
+      <div class="flower animate-sway" style="left: 50%; animation-delay: 0s;">
+        <div class="flower-head">
+          <div class="center-disk"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(0deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(45deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(90deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(135deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(180deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(225deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(270deg);"></div>
+          <div class="petal" style="background: #ff69b4; transform: rotate(315deg);"></div>
+        </div>
+        <div class="stem" style="height: 240px; transform: rotate(0deg);"></div>
+      </div>
+
+      <!-- Flower 3 (Yellow) -->
+      <div class="flower animate-sway" style="left: 65%; animation-delay: 0.4s;">
+        <div class="flower-head">
+          <div class="center-disk"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(0deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(45deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(90deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(135deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(180deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(225deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(270deg);"></div>
+          <div class="petal" style="background: #ffb347; transform: rotate(315deg);"></div>
+        </div>
+        <div class="stem" style="height: 180px; transform: rotate(10deg);"></div>
+      </div>
+
+      <!-- Glass Vase -->
+      <div class="glass-vase"></div>
+    </div>
+  </div>
+
+  <!-- Decor -->
+  <div class="floating text-4xl top-10 left-10">✨</div>
+  <div class="floating text-4xl bottom-10 right-10">✨</div>
+  <div class="floating text-3xl top-1/2 left-4 rotate-12">❤️</div>
+  <div class="floating text-3xl bottom-1/4 right-8 -rotate-12">💖</div>
+
+</body>
 </html>
