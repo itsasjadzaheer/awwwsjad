@@ -17,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* Standard Layout flow to prevent overlap */
     .content-wrapper {
       display: flex;
       flex-direction: column;
@@ -26,20 +25,19 @@
       padding: 40px 20px;
     }
 
-    /* Message Box styling */
     .message-card {
       background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 32px;
       padding: 40px;
-      max-width: 700px;
+      max-width: 750px;
       text-align: center;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
       margin-bottom: 60px;
+      z-index: 50;
     }
 
-    /* Flower Animation */
     @keyframes sway {
       0%, 100% { transform: translateX(-50%) rotate(-1.5deg); }
       50% { transform: translateX(-50%) rotate(1.5deg); }
@@ -58,11 +56,11 @@
       animation: fadeIn 1.2s ease-out forwards;
     }
 
-    /* Flower & Vase Construction */
     .vase-container {
       position: relative;
-      width: 300px;
-      height: 450px;
+      width: 100%;
+      max-width: 500px;
+      height: 500px;
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -71,14 +69,14 @@
 
     .glass-vase {
       position: relative;
-      width: 120px;
+      width: 130px;
       height: 160px;
-      background: rgba(0, 120, 130, 0.25);
+      background: rgba(0, 120, 130, 0.2);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 10px 10px 40px 40px;
-      z-index: 30;
-      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 15px 15px 45px 45px;
+      z-index: 40;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3), 0 15px 30px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
 
@@ -87,8 +85,8 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 75%;
-      background: rgba(0, 162, 174, 0.1);
+      height: 80%;
+      background: rgba(0, 162, 174, 0.08);
     }
 
     .flower {
@@ -104,20 +102,20 @@
 
     .flower-head {
       position: relative;
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       z-index: 10;
     }
 
     .petal {
       position: absolute;
-      width: 40px;
-      height: 60px;
+      width: 30px;
+      height: 45px;
       border-radius: 50%;
       top: 0;
-      left: 20px;
+      left: 15px;
       transform-origin: bottom center;
-      opacity: 0.95;
+      opacity: 0.9;
     }
 
     .center-disk {
@@ -125,22 +123,32 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      width: 14px;
+      height: 14px;
       background: #facc15;
       border-radius: 50%;
       z-index: 20;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
     }
 
     .stem {
-      width: 6px;
+      width: 5px;
       background: #1c5b4f;
       border-radius: 10px;
-      margin-top: -5px;
+      margin-top: -3px;
     }
 
-    /* Floating Icons */
+    .leaf-filler {
+      position: absolute;
+      width: 15px;
+      height: 40px;
+      background: #2d7a6b;
+      border-radius: 50% 0 50% 0;
+      opacity: 0.5;
+      bottom: 120px;
+      z-index: 5;
+    }
+
     .floating {
       position: fixed;
       opacity: 0.15;
@@ -161,86 +169,127 @@
 <body>
 
   <div class="content-wrapper">
-    <!-- Title -->
     <header class="animate-fade" style="animation-delay: 0.2s">
       <h1 class="text-[#ff8f8f] text-4xl md:text-5xl font-bold mb-8 text-center px-4">
         Thank you for being my girlfriend ❤️
       </h1>
     </header>
 
-    <!-- Message Section -->
     <div class="message-card animate-fade" style="animation-delay: 0.4s">
       <p class="text-[#ff8f8f] text-lg md:text-xl leading-relaxed italic font-medium">
-        "Thank you for being my girlfriend, begum, babe, cutie, jerry and my best my love ❤️. My love jaana❤️🌹, 
-        I just want to say thank you for being the most beautiful part of my life yrr. You make my world softer, 
-        brighter, and so much better just by being in it bb. 👁️‍🗨️ You are more than enough you are worthy, 
-        precious, and deeply loved every single day, not just today meri Ayesha. 🥰❤️ On this Valentine's Day I want you 
+        "Thank you for being my girlfriend, begum, babe, cutie, jerry and my best my love ❤️. My love ❤️🌹, 
+        I just want to say thank you for being the most beautiful part of my life. You make my world softer, 
+        brighter, and so much better just by being in it. 👁️‍🗨️ You are more than enough — you are worthy, 
+        precious, and deeply loved every single day, not just today. 🥰❤️ On this Valentine's Day I want you 
         to remember that you are my safe place, my biggest blessing, and my favorite person in the entire universe. 
-        🌍✨ I'm so lucky to call you mine Ayeshaa, and I promise to always remind you how special and irreplaceable you are my Sweet Love. ❤️💍"
+        🌍✨ I'm so lucky to call you mine, and I promise to always remind you how special and irreplaceable you are. ❤️💍"
       </p>
     </div>
 
-    <!-- Flower Vase Section (Naturally pushed below text) -->
     <div class="vase-container animate-fade" style="animation-delay: 0.6s">
+      <!-- LEAF FILLERS -->
+      <div class="leaf-filler" style="left: 35%; transform: rotate(-30deg);"></div>
+      <div class="leaf-filler" style="left: 65%; transform: rotate(30deg);"></div>
+      <div class="leaf-filler" style="left: 50%; transform: rotate(10deg); height: 60px;"></div>
+
+      <!-- MANY FLOWERS (15 FLOWERS) -->
+      <!-- Colors: Pink (#ff69b4), Purple (#b266ff), Yellow (#ffb347), Red (#ff4d4d), Peach (#ff9a8b) -->
       
-      <!-- Flower 1 (Purple) -->
-      <div class="flower animate-sway" style="left: 35%; animation-delay: 0.2s;">
-        <div class="flower-head">
-          <div class="center-disk"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(0deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(45deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(90deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(135deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(180deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(225deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(270deg);"></div>
-          <div class="petal" style="background: #b266ff; transform: rotate(315deg);"></div>
-        </div>
-        <div class="stem" style="height: 200px; transform: rotate(-10deg);"></div>
-      </div>
-
-      <!-- Flower 2 (Pink) -->
+      <!-- Center Main -->
       <div class="flower animate-sway" style="left: 50%; animation-delay: 0s;">
-        <div class="flower-head">
-          <div class="center-disk"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(0deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(45deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(90deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(135deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(180deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(225deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(270deg);"></div>
-          <div class="petal" style="background: #ff69b4; transform: rotate(315deg);"></div>
+        <div class="flower-head"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff69b4; transform:rotate(${i*45}deg)"></div>`)</script>
         </div>
-        <div class="stem" style="height: 240px; transform: rotate(0deg);"></div>
+        <div class="stem" style="height: 260px; transform: rotate(0deg);"></div>
       </div>
 
-      <!-- Flower 3 (Yellow) -->
-      <div class="flower animate-sway" style="left: 65%; animation-delay: 0.4s;">
-        <div class="flower-head">
-          <div class="center-disk"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(0deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(45deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(90deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(135deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(180deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(225deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(270deg);"></div>
-          <div class="petal" style="background: #ffb347; transform: rotate(315deg);"></div>
+      <!-- Left Group -->
+      <div class="flower animate-sway" style="left: 42%; animation-delay: 0.2s;">
+        <div class="flower-head"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#b266ff; transform:rotate(${i*45}deg)"></div>`)</script>
         </div>
-        <div class="stem" style="height: 180px; transform: rotate(10deg);"></div>
+        <div class="stem" style="height: 230px; transform: rotate(-10deg);"></div>
+      </div>
+      
+      <div class="flower animate-sway" style="left: 34%; animation-delay: 0.4s;">
+        <div class="flower-head" style="transform: scale(0.8)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff4d4d; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 190px; transform: rotate(-18deg);"></div>
       </div>
 
-      <!-- Glass Vase -->
+      <!-- Right Group -->
+      <div class="flower animate-sway" style="left: 58%; animation-delay: 0.3s;">
+        <div class="flower-head"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ffb347; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 225px; transform: rotate(12deg);"></div>
+      </div>
+
+      <div class="flower animate-sway" style="left: 66%; animation-delay: 0.5s;">
+        <div class="flower-head" style="transform: scale(0.8)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff9a8b; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 180px; transform: rotate(22deg);"></div>
+      </div>
+
+      <!-- Filling the Gaps -->
+      <div class="flower animate-sway" style="left: 47%; animation-delay: 0.6s;">
+        <div class="flower-head" style="transform: scale(0.9)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff9a8b; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 210px; transform: rotate(-4deg);"></div>
+      </div>
+
+      <div class="flower animate-sway" style="left: 53%; animation-delay: 0.7s;">
+        <div class="flower-head" style="transform: scale(0.9)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff4d4d; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 215px; transform: rotate(5deg);"></div>
+      </div>
+
+      <!-- Front Row (Shorter) -->
+      <div class="flower animate-sway" style="left: 50%; animation-delay: 1.2s;">
+        <div class="flower-head" style="transform: scale(0.7)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ffb347; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 150px; transform: rotate(2deg);"></div>
+      </div>
+
+      <!-- Back Row (Taller) -->
+      <div class="flower animate-sway" style="left: 50%; animation-delay: 1.5s;">
+        <div class="flower-head" style="transform: scale(1.1)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff69b4; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 280px; transform: rotate(0deg); opacity: 0.8;"></div>
+      </div>
+
+      <!-- Left Outer -->
+      <div class="flower animate-sway" style="left: 38%; animation-delay: 0.9s;">
+        <div class="flower-head" style="transform: scale(0.85)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#b266ff; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 200px; transform: rotate(-14deg);"></div>
+      </div>
+
+      <!-- Right Outer -->
+      <div class="flower animate-sway" style="left: 62%; animation-delay: 1.1s;">
+        <div class="flower-head" style="transform: scale(0.85)"><div class="center-disk"></div>
+          <script>for(let i=0; i<8; i++) document.write(`<div class="petal" style="background:#ff69b4; transform:rotate(${i*45}deg)"></div>`)</script>
+        </div>
+        <div class="stem" style="height: 205px; transform: rotate(16deg);"></div>
+      </div>
+
       <div class="glass-vase"></div>
     </div>
   </div>
 
-  <!-- Decor -->
   <div class="floating text-4xl top-10 left-10">✨</div>
   <div class="floating text-4xl bottom-10 right-10">✨</div>
   <div class="floating text-3xl top-1/2 left-4 rotate-12">❤️</div>
   <div class="floating text-3xl bottom-1/4 right-8 -rotate-12">💖</div>
 
+  <!-- Root div for React fallback -->
+  <div id="root"></div>
 </body>
 </html>
