@@ -7,11 +7,13 @@
 
 /* BODY */
 body {
-  background-color: #f5e6d3;
-  font-family: 'Poppins', sans-serif;
-  overflow-y: auto;
-  min-height: 100vh;
+  background: #f5e6d3;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0 20px;
+  overflow-x: hidden;
 }
+
 
 /* HEADING */
 h1 {
@@ -26,10 +28,11 @@ h1 {
 }
 
 .flower {
-  position: relative;
-  width: 300px;
-  height: 500px;
-  margin: 80px auto;
+  position: relative;   /* 👈 VERY IMPORTANT */
+  margin-top: 120px;    /* pushes flower below text */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 /* STEM */
