@@ -24,28 +24,26 @@ h1 {
 }
 
 .love-message {
-  max-width: 800px; /* Slightly narrower for better readability */
-  margin: 30px auto;
-  padding: 0 20px; /* Keeps text away from screen edges */
+  max-width: 700px;       /* Keeps the lines of text from being too long */
+  margin: 40px auto;      /* Centers the message block */
+  padding: 20px;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.6;
   font-size: 20px;
   color: #ff8f8f;
+  background: rgba(255, 255, 255, 0.3); /* Optional: adds a soft subtle glow behind text */
+  border-radius: 15px;
 }
 
 .flower {
   position: relative;
-  /* Add clear: both to ensure it sits below everything else */
-  clear: both; 
-  /* Increase margin-top to push it away from the text */
-  margin-top: 150px; 
-  margin-bottom: 80px;
-  /* This height needs to be large enough to contain the tall stems and vase */
-  height: 600px; 
-  /* Center the container itself */
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-end; /* Keeps flowers grounded at the bottom */
+  margin-top: 200px;     /* Increases the gap between text and vase */
+  margin-bottom: 100px;
+  height: 500px;         /* Explicit height creates a "box" the flowers can't leave */
+  width: 100%;
 }
 
 /* STEM */
@@ -59,10 +57,10 @@ h1 {
 
 .f-wrapper {
   position: absolute;
-  /* Change top back to bottom to keep it grounded in the vase */
-  bottom: 150px; 
+  bottom: 160px;         /* Anchors the stems inside the vase */
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;            /* Ensures flowers are visible */
 }
 
 .f-wrapper--2 {
@@ -118,7 +116,7 @@ h1 {
 /* GLASS VASE */
 .flower__glass {
   position: absolute;
-  bottom: 20px;
+  bottom: 0;             /* Sit exactly at the bottom of the .flower container */
   left: 50%;
   transform: translateX(-50%);
   width: 140px;
@@ -126,6 +124,7 @@ h1 {
   background: rgba(0, 120, 130, 0.3);
   border-radius: 20px 20px 30px 30px;
   backdrop-filter: blur(4px);
+  z-index: 1;            /* Vase sits behind the flowers slightly */
 }
 
 /* RESPONSIVE */
