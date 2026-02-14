@@ -77,5 +77,24 @@
       </div>
       <div class="flower__glass"></div>
     </div>
+    <script>
+const loveBtn = document.getElementById("loveBtn");
+const lovePopup = document.getElementById("lovePopup");
+const closeBtn = document.getElementById("closeBtn");
+
+loveBtn.onclick = function() {
+  lovePopup.style.display = "flex";
+}
+
+closeBtn.onclick = function() {
+  lovePopup.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == lovePopup) {
+    lovePopup.style.display = "none";
+  }
+}
+</script>
   </body>
 </html>
