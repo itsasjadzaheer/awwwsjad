@@ -56,7 +56,7 @@ h1 {
 }
 
 .f-wrapper {
-  position: absolute;
+  position: relative;
   bottom: 160px;         /* Anchors the stems inside the vase */
   left: 50%;
   transform: translateX(-50%);
@@ -80,7 +80,7 @@ h1 {
 
 /* PETALS */
 .flower__leaf {
-  position: absolute;
+  position: relative;
   width: 40px;
   height: 60px;
   background: pink;
@@ -115,7 +115,7 @@ h1 {
 
 /* GLASS VASE */
 .flower__glass {
-  position: absolute;
+  position: relative;
   bottom: 0;             /* Sit exactly at the bottom of the .flower container */
   left: 50%;
   transform: translateX(-50%);
