@@ -24,26 +24,22 @@ h1 {
 }
 
 .love-message {
-  max-width: 700px;       /* Keeps the lines of text from being too long */
-  margin: 40px auto;      /* Centers the message block */
-  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto; /* Adds more space above and below the text */
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 20px;
   color: #ff8f8f;
-  background: rgba(255, 255, 255, 0.3); /* Optional: adds a soft subtle glow behind text */
-  border-radius: 15px;
+  padding: 0 20px;
 }
 
 .flower {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end; /* Keeps flowers grounded at the bottom */
-  margin-top: 200px;     /* Increases the gap between text and vase */
-  margin-bottom: 100px;
-  height: 500px;         /* Explicit height creates a "box" the flowers can't leave */
+  display: block;    /* Ensures it sits below the text naturally */
   width: 100%;
+  height: 600px;     /* Reserves space so the vase doesn't fly up */
+  margin-top: 100px; /* Physical gap between the text and the flower art */
+  margin-bottom: 50px;
 }
 
 /* STEM */
@@ -56,19 +52,21 @@ h1 {
 }
 
 .f-wrapper {
-  position: relative;
-  bottom: 160px;         /* Anchors the stems inside the vase */
+  position: absolute;
+  bottom: 120px;     /* Distance from the bottom of the container */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;            /* Ensures flowers are visible */
 }
 
+/* 4. Offset the other flowers so they look like a bouquet */
 .f-wrapper--2 {
-  left: 30%;
+  left: 45%;
+  transform: translateX(-50%) rotate(-15deg);
 }
 
 .f-wrapper--3 {
-  left: 70%;
+  left: 55%;
+  transform: translateX(-50%) rotate(15deg);
 }
 
 /* FLOWER CENTER */
@@ -115,8 +113,8 @@ h1 {
 
 /* GLASS VASE */
 .flower__glass {
-  position: relative;
-  bottom: 0;             /* Sit exactly at the bottom of the .flower container */
+  position: absolute;
+  bottom: 0;         /* Ground it to the bottom of the container */
   left: 50%;
   transform: translateX(-50%);
   width: 140px;
@@ -124,7 +122,6 @@ h1 {
   background: rgba(0, 120, 130, 0.3);
   border-radius: 20px 20px 30px 30px;
   backdrop-filter: blur(4px);
-  z-index: 1;            /* Vase sits behind the flowers slightly */
 }
 
 /* RESPONSIVE */
