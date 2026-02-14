@@ -1,100 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/flower.css" />
-    
-  </head>
-  <body>
-    <div id="thankyou"><b>Thank you for being my girlfriend</b></div>
-   <button id="loveBtn" class="love-button">Open My Heart 💌</button>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You ❤️</title>
 
-    <!-- Love Letter Popup -->
-<div id="lovePopup" class="popup">
-  <div class="popup-content">
-    <span id="closeBtn" class="close">&times;</span>
-    <h2>For My Love ❤️</h2>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #1e1e2f, #2b1055);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
 
-    <p class="love-paragraph">
-      My love, from the moment you walked into my life, everything became softer, warmer, and brighter.
-      This little website is just a tiny reflection of how much effort I’d put into making you smile.
-      You are my peace, my excitement, and my forever favorite person.
-      I can’t wait to create beautiful memories with you.
-    </p>
+/* THANK YOU HEADING */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
 
+/* LOVE LETTER PARAGRAPH */
+.love-letter {
+  font-weight: bold;
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+/* FLOWER STYLING */
+.flower {
+  position: relative;
+  width: 200px;
+  height: 300px;
+}
+
+.f-wrapper {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.f-wrapper--2 {
+  left: 30%;
+}
+
+.f-wrapper--3 {
+  left: 70%;
+}
+
+.flower__line {
+  width: 4px;
+  height: 100px;
+  background: #4caf50;
+  margin: auto;
+}
+
+.f {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+
+.flower__leaf {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: pink;
+  border-radius: 50%;
+  animation: bloom 3s infinite alternate ease-in-out;
+}
+
+.flower__leaf--1 { top: 0; left: 15px; }
+.flower__leaf--2 { top: 15px; left: 0; }
+.flower__leaf--3 { top: 15px; right: 0; }
+.flower__leaf--4 { bottom: 0; left: 15px; }
+
+.flower__glass {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 80px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 0 0 60px 60px;
+  backdrop-filter: blur(5px);
+}
+
+/* ANIMATION */
+@keyframes bloom {
+  from { transform: scale(0.9); }
+  to { transform: scale(1.1); }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Thank You ❤️</h1>
+
+<p class="love-letter">
+  My love, this little page is just a reminder that you mean the world to me.
+  Every smile of yours brightens my darkest days, and every moment with you
+  feels like magic. You are my happiness, my peace, and my forever.
+</p>
+
+<!-- YOUR INTERACTIVE FLOWER -->
+<div class="flower">
+  <div class="f-wrapper">
+    <div class="flower__line"></div>
+    <div class="f">
+      <div class="flower__leaf flower__leaf--1"></div>
+      <div class="flower__leaf flower__leaf--2"></div>
+      <div class="flower__leaf flower__leaf--3"></div>
+      <div class="flower__leaf flower__leaf--4"></div>
+    </div>
   </div>
+
+  <div class="f-wrapper f-wrapper--2">
+    <div class="flower__line"></div>
+    <div class="f">
+      <div class="flower__leaf flower__leaf--1"></div>
+      <div class="flower__leaf flower__leaf--2"></div>
+      <div class="flower__leaf flower__leaf--3"></div>
+      <div class="flower__leaf flower__leaf--4"></div>
+    </div>
+  </div>
+
+  <div class="f-wrapper f-wrapper--3">
+    <div class="flower__line"></div>
+    <div class="f">
+      <div class="flower__leaf flower__leaf--1"></div>
+      <div class="flower__leaf flower__leaf--2"></div>
+      <div class="flower__leaf flower__leaf--3"></div>
+      <div class="flower__leaf flower__leaf--4"></div>
+    </div>
+  </div>
+
+  <div class="flower__glass"></div>
 </div>
 
-    <div class="flower">
-      <div class="f-wrapper">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--yellow"
-          ></div>
-        </div>
-      </div>
-
-      <div class="f-wrapper f-wrapper--2">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--pink"
-          ></div>
-        </div>
-      </div>
-
-      <div class="f-wrapper f-wrapper--3">
-        <div class="flower__line"></div>
-        <div class="f">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__leaf flower__leaf--5"></div>
-          <div class="flower__leaf flower__leaf--6"></div>
-          <div class="flower__leaf flower__leaf--7"></div>
-          <div
-            class="flower__leaf flower__leaf--8 flower__fall-down--purple"
-          ></div>
-        </div>
-      </div>
-      <div class="flower__glass"></div>
-    </div>
-    <script>
-const loveBtn = document.getElementById("loveBtn");
-const lovePopup = document.getElementById("lovePopup");
-const closeBtn = document.getElementById("closeBtn");
-
-loveBtn.onclick = function() {
-  lovePopup.style.display = "flex";
-}
-
-closeBtn.onclick = function() {
-  lovePopup.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == lovePopup) {
-    lovePopup.style.display = "none";
-  }
-}
-</script>
-  </body>
+</body>
 </html>
