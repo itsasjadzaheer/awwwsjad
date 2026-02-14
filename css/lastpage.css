@@ -24,15 +24,19 @@ h1 {
 }
 
 .love-message {
-  margin-bottom: 100px;
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 20px;
+  color: #ff8f8f;
 }
 
 .flower {
-  position: relative;   /* 👈 VERY IMPORTANT */
-  margin-top: 120px;    /* pushes flower below text */
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  position: relative;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  height: 450px;   /* 👈 IMPORTANT: gives space for absolute children */
 }
 
 /* STEM */
@@ -47,7 +51,7 @@ h1 {
 /* FLOWER WRAPPER */
 .f-wrapper {
   position: absolute;
-  bottom: 180px;
+  top: 40px;   /* 👈 was bottom, now use top */
   left: 50%;
   transform: translateX(-50%);
 }
@@ -105,7 +109,7 @@ h1 {
 /* GLASS VASE */
 .flower__glass {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   width: 140px;
