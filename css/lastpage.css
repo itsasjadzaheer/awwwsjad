@@ -34,7 +34,7 @@ h1 {
 
 .flower {
   position: relative;
-  margin-top: 60px;
+  margin-top: 500px;
   margin-bottom: 80px;
   height: 450px;   /* 👈 IMPORTANT: gives space for absolute children */
 }
