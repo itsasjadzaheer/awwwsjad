@@ -21,23 +21,15 @@ h1 {
   color: #ff8f8f;
 }
 
-/* LOVE PARAGRAPH */
 .love-message {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1.8;
-  color: #ff6f6f;
+  margin-bottom: 100px;
 }
 
 .flower {
   position: relative;
   width: 300px;
   height: 500px;
-  margin: 400px auto 100px auto; /* 👈 pushes it down */
+  margin: 80px auto;
 }
 
 /* STEM */
