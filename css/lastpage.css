@@ -34,9 +34,17 @@ h1 {
 
 .flower {
   position: relative;
-  margin-top: 500px;
+  /* Add clear: both to ensure it sits below everything else */
+  clear: both; 
+  /* Increase margin-top to push it away from the text */
+  margin-top: 150px; 
   margin-bottom: 80px;
-  height: 450px;   /* 👈 IMPORTANT: gives space for absolute children */
+  /* This height needs to be large enough to contain the tall stems and vase */
+  height: 600px; 
+  /* Center the container itself */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 /* STEM */
